@@ -12,6 +12,6 @@ RUN npm install -g nodemon
 
 RUN npm install
 
-EXPOSE $PORT
+EXPOSE 8081
 
 CMD [ "npm", "start" ]
