@@ -17,4 +17,8 @@ app.get('/posts', (req, res) => {
   )
 })
 
-app.listen(process.env.PORT || 8081)
+var server = app.listen(process.env.PORT || 8081, function () {
+  var port = server.address().port;
+  console.log('Server is listening at port %s', port);
+});
+module.exports = server;
