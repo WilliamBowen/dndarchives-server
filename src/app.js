@@ -6,7 +6,9 @@ const morgan = require('morgan')
 var mongoose = require('mongoose');
 var Post = require("../models/post");
 
-mongoose.connect('mongodb://localhost:27017/posts');
+const dbuser = process.env.MLAB_USER;
+const dbpass = process.env.MLAB_PASS;
+mongoose.connect('mongodb://'+dbuser+':'+dbpass+'@ds237922.mlab.com:37922/dndarchive');
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", function(callback){
