@@ -8,6 +8,7 @@ var Post = require("../models/post");
 
 const dbuser = process.env.MLAB_USER;
 const dbpass = process.env.MLAB_PASS;
+
 mongoose.connect('mongodb://'+dbuser+':'+dbpass+'@ds237922.mlab.com:37922/dndarchive');
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
