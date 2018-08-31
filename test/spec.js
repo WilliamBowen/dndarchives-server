@@ -5,7 +5,7 @@ describe('loading express', function () {
     server = require('../src/app');
   });
   afterEach(function () {
-    server.close();
+    require('../src/app').stop();
   });
   it('responds to /posts', function testPosts(done) {
     request(server)

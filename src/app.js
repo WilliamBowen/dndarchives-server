@@ -54,4 +54,11 @@ var server = app.listen(process.env.PORT || 8081, function () {
   var port = server.address().port;
   console.log('Server is listening at port %s', port);
 });
+
+function stop() {
+  server.close();
+  mongoose.disconnect();
+}
+
 module.exports = server;
+module.exports.stop = stop;
