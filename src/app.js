@@ -33,7 +33,7 @@ app.get('/posts', (req, res) => {
 //Fetch single post
 app.get('/post/:id', (req, res) => {
   var db = req.db;
-  Post.findById(req.params.id, 'title description', funcion (error, post) {
+  Post.findById(req.params.id, 'title description', function (error, post) {
     if (error) { console.error(error); }
     res.send(post)
   })
